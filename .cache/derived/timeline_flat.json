@@ -1,67 +1,96 @@
 {
   "schema_version": "1.0",
-  "created_at": "2026-03-12T01:35:00+02:00",
-  "timeline": [
+  "created_at": "2026-03-12T14:00:00+02:00",
+  "entries": [
     {
-      "timestamp": "2026-03-11T13:30:00+02:00",
+      "id": "tl_001",
       "event_type": "feeding",
+      "source_id": "feed_005",
       "person_id": "lia",
       "person_name": "ליה",
-      "summary_he": "האכלה - בקבוק תמ״ל 30 מ״ל",
-      "summary_en": "Feeding - Bottle 30 ml",
-      "entity_id": "feed_001"
-    },
-    {
-      "timestamp": "2026-03-11T16:00:00+02:00",
-      "event_type": "feeding",
-      "person_id": "lia",
-      "person_name": "ליה",
-      "summary_he": "האכלה - בקבוק תמ״ל 30 מ״ל",
-      "summary_en": "Feeding - Bottle 30 ml",
-      "entity_id": "feed_002"
-    },
-    {
-      "timestamp": "2026-03-11T16:00:00+02:00",
-      "event_type": "diaper",
-      "person_id": "lia",
-      "person_name": "ליה",
-      "summary_he": "חיתול - קקי + פיפי",
-      "summary_en": "Diaper - Both",
-      "entity_id": "diaper_001"
-    },
-    {
-      "timestamp": "2026-03-11T19:20:00+02:00",
-      "event_type": "feeding",
-      "person_id": "lia",
-      "person_name": "ליה",
-      "summary_he": "האכלה - הנקה 100 דקות",
-      "summary_en": "Feeding - Nursing 100 min",
-      "entity_id": "feed_003"
-    },
-    {
-      "timestamp": "2026-03-11T23:00:00+02:00",
-      "event_type": "feeding",
-      "person_id": "lia",
-      "person_name": "ליה",
-      "summary_he": "האכלה - הנקה צד שמאל",
-      "summary_en": "Feeding - Nursing left side",
-      "entity_id": "feed_004"
-    },
-    {
       "timestamp": "2026-03-12T01:20:00+02:00",
-      "event_type": "feeding",
+      "date": "2026-03-12",
+      "time": "01:20",
+      "title_he": "הנקה",
+      "title_en": "Nursing",
+      "subtitle_he": "שני הצדדים",
+      "subtitle_en": "Both sides",
+      "icon": "🍼"
+    },
+    {
+      "id": "tl_002",
+      "event_type": "diaper",
+      "source_id": "diaper_20260312_1430",
       "person_id": "lia",
       "person_name": "ליה",
-      "summary_he": "האכלה - הנקה שני הצדדים",
-      "summary_en": "Feeding - Nursing both sides",
-      "entity_id": "feed_005"
+      "timestamp": "2026-03-12T14:30:00+02:00",
+      "date": "2026-03-12",
+      "time": "14:30",
+      "title_he": "קקי + פיפי",
+      "title_en": "Both",
+      "subtitle_he": "",
+      "subtitle_en": "",
+      "icon": "🧷"
+    },
+    {
+      "id": "tl_003",
+      "event_type": "feeding",
+      "source_id": "feed_004",
+      "person_id": "lia",
+      "person_name": "ליה",
+      "timestamp": "2026-03-11T23:00:00+02:00",
+      "date": "2026-03-11",
+      "time": "23:00",
+      "title_he": "הנקה",
+      "title_en": "Nursing",
+      "subtitle_he": "השלמה",
+      "subtitle_en": "Supplementary",
+      "icon": "🍼"
+    },
+    {
+      "id": "tl_004",
+      "event_type": "feeding",
+      "source_id": "feed_003",
+      "person_id": "lia",
+      "person_name": "ליה",
+      "timestamp": "2026-03-11T19:20:00+02:00",
+      "date": "2026-03-11",
+      "time": "19:20",
+      "title_he": "הנקה",
+      "title_en": "Nursing",
+      "subtitle_he": "שני הצדדים",
+      "subtitle_en": "Both sides",
+      "icon": "🍼"
+    },
+    {
+      "id": "tl_005",
+      "event_type": "feeding",
+      "source_id": "feed_002",
+      "person_id": "lia",
+      "person_name": "ליה",
+      "timestamp": "2026-03-11T16:00:00+02:00",
+      "date": "2026-03-11",
+      "time": "16:00",
+      "title_he": "בקבוק תמ״ל",
+      "title_en": "Bottle",
+      "subtitle_he": "30 מ״ל סיסי",
+      "subtitle_en": "30 ml Sissy",
+      "icon": "🍼"
+    },
+    {
+      "id": "tl_006",
+      "event_type": "feeding",
+      "source_id": "feed_001",
+      "person_id": "lia",
+      "person_name": "ליה",
+      "timestamp": "2026-03-11T13:30:00+02:00",
+      "date": "2026-03-11",
+      "time": "13:30",
+      "title_he": "בקבוק תמ״ל",
+      "title_en": "Bottle",
+      "subtitle_he": "30 מ״ל סיסי",
+      "subtitle_en": "30 ml Sissy",
+      "icon": "🍼"
     }
-  ],
-  "summary": {
-    "total_events": 6,
-    "date_range": {
-      "start": "2026-03-11T13:30:00+02:00",
-      "end": "2026-03-12T01:20:00+02:00"
-    }
-  }
+  ]
 }

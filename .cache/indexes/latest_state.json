@@ -1,33 +1,23 @@
 {
-  "schema_version": "1.0",
-  "created_at": "2026-03-12T01:35:00+02:00",
-  "person_id": "lia",
-  "latest": {
-    "feeding": {
-      "entity_id": "feed_005",
-      "timestamp": "2026-03-12T01:20:00+02:00",
-      "type": "nursing",
-      "minutes_ago": 15,
-      "summary_he": "הנקה שני הצדדים",
-      "summary_en": "Nursing both sides"
-    },
-    "diaper": {
-      "entity_id": "diaper_001",
-      "timestamp": "2026-03-11T16:00:00+02:00",
-      "type": "both",
-      "hours_ago": 9.5,
-      "summary_he": "קקי + פיפי",
-      "summary_en": "Both"
-    },
-    "sleep": null,
-    "health": null,
-    "medication": null,
-    "appointment": null
+  "last_feeding": {
+    "id": "feed_005",
+    "timestamp": "2026-03-12T01:20:00+02:00",
+    "type": "nursing"
   },
-  "stats": {
-    "total_feedings": 5,
-    "total_diapers": 1,
-    "total_sleeps": 0,
-    "avg_feeding_gap_hours": 2.5
-  }
+  "last_diaper": {
+    "id": "diaper_20260312_1430",
+    "timestamp": "2026-03-12T14:30:00+02:00",
+    "details": {
+      "urine": true,
+      "stool": true
+    }
+  },
+  "last_sleep": null,
+  "today_feeding_count": 1,
+  "today_sleep_total_minutes": 0,
+  "today_diaper_count": 1,
+  "open_tasks_count": 2,
+  "upcoming_appointments": 0,
+  "active_alerts_count": 1,
+  "last_successful_update_at": "2026-03-12T14:00:00+02:00"
 }

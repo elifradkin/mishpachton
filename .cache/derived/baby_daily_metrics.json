@@ -2,26 +2,26 @@
   "schema_version": "1.0",
   "person_id": "lia",
   "date": "2026-03-12",
-  "created_at": "2026-03-12T01:35:00+02:00",
+  "created_at": "2026-03-12T14:00:00+02:00",
   "metrics": {
     "feeding": {
-      "total_count": 5,
-      "nursing_count": 3,
-      "bottle_count": 2,
-      "total_nursing_minutes": 100,
-      "total_bottle_ml": 60,
-      "avg_gap_hours": 2.5,
-      "longest_gap_hours": 4.0,
+      "total_count": 1,
+      "nursing_count": 1,
+      "bottle_count": 0,
+      "total_nursing_minutes": 0,
+      "total_bottle_ml": 0,
+      "avg_gap_hours": 0,
+      "longest_gap_hours": 0,
       "last_feeding_time": "2026-03-12T01:20:00+02:00",
-      "minutes_since_last_feeding": 15
+      "minutes_since_last_feeding": 760
     },
     "diapers": {
       "total_count": 1,
-      "wet_count": 1,
-      "dirty_count": 1,
+      "wet_count": 0,
+      "dirty_count": 0,
       "both_count": 1,
-      "last_diaper_time": "2026-03-11T16:00:00+02:00",
-      "hours_since_last_diaper": 9.5
+      "last_diaper_time": "2026-03-12T14:30:00+02:00",
+      "hours_since_last_diaper": 1.5
     },
     "sleep": {
       "total_naps": 0,
@@ -35,6 +35,6 @@
       "medications_given": 0
     }
   },
-  "summary_he": "5 האכלות (3 הנקות, 2 בקבוקים), חיתול 1",
-  "summary_en": "5 feedings (3 nursing, 2 bottles), 1 diaper"
+  "summary_he": "1 האכלה (1 הנקה), חיתול 1",
+  "summary_en": "1 feeding (1 nursing), 1 diaper"
 }

@@ -1,19 +1,31 @@
 {
   "schema_version": "1.0",
   "date": "2026-03-12",
-  "created_at": "2026-03-12T01:35:00+02:00",
+  "created_at": "2026-03-12T14:00:00+02:00",
   "summary_cards": [
     {
       "id": "baby_feeding",
       "title_he": "האכלות היום",
       "title_en": "Feedings Today",
-      "value": 5,
+      "value": 1,
       "unit_he": "האכלות",
       "unit_en": "feedings",
-      "subtitle_he": "אחרונה לפני 15 דקות",
-      "subtitle_en": "Last 15 minutes ago",
+      "subtitle_he": "1 הנקה",
+      "subtitle_en": "1 nursing",
       "icon": "🍼",
       "status": "normal"
+    },
+    {
+      "id": "baby_sleep",
+      "title_he": "שינה היום",
+      "title_en": "Sleep Today",
+      "value": 0,
+      "unit_he": "דקות",
+      "unit_en": "minutes",
+      "subtitle_he": "אין נתוני שינה",
+      "subtitle_en": "No sleep data",
+      "icon": "😴",
+      "status": "warning"
     },
     {
       "id": "baby_diapers",
@@ -22,116 +34,32 @@
       "value": 1,
       "unit_he": "חיתולים",
       "unit_en": "diapers",
-      "subtitle_he": "אחרון לפני 9.5 שעות",
-      "subtitle_en": "Last 9.5 hours ago",
+      "subtitle_he": "1 קקי+פיפי",
+      "subtitle_en": "1 both",
       "icon": "🧷",
-      "status": "warning"
-    },
-    {
-      "id": "mother_recovery",
-      "title_he": "החלמת האם",
-      "title_en": "Mother's Recovery",
-      "value": 3,
-      "unit_he": "ימים",
-      "unit_en": "days",
-      "subtitle_he": "יום 3 אחרי לידה",
-      "subtitle_en": "Day 3 postpartum",
-      "icon": "👩",
       "status": "normal"
     },
     {
-      "id": "family_tasks",
-      "title_he": "משימות פעילות",
-      "title_en": "Active Tasks",
-      "value": 2,
-      "unit_he": "משימות",
-      "unit_en": "tasks",
-      "subtitle_he": "1 בעדיפות גבוהה",
-      "subtitle_en": "1 high priority",
-      "icon": "✅",
+      "id": "mother_recovery",
+      "title_he": "החלמת אמא",
+      "title_en": "Mother Recovery",
+      "value": "יום 3",
+      "unit_he": "",
+      "unit_en": "",
+      "subtitle_he": "יום 3 אחרי לידה",
+      "subtitle_en": "Day 3 postpartum",
+      "icon": "💜",
       "status": "normal"
     }
   ],
   "chart_series": {
     "feedings_24h": [
-      {
-        "hour": "13:00",
-        "count": 1,
-        "type": "bottle"
-      },
-      {
-        "hour": "16:00",
-        "count": 1,
-        "type": "bottle"
-      },
-      {
-        "hour": "19:00",
-        "count": 1,
-        "type": "nursing"
-      },
-      {
-        "hour": "23:00",
-        "count": 1,
-        "type": "nursing"
-      },
-      {
-        "hour": "01:00",
-        "count": 1,
-        "type": "nursing"
-      }
-    ],
-    "diapers_24h": [
-      {
-        "hour": "16:00",
-        "count": 1,
-        "type": "both"
-      }
+      { "hour": "01:00", "count": 1, "type": "nursing" }
     ]
   },
-  "recent_events": [
-    {
-      "timestamp": "2026-03-12T01:20:00+02:00",
-      "type": "feeding",
-      "icon": "🍼",
-      "title_he": "האכלה - הנקה",
-      "title_en": "Feeding - Nursing",
-      "time_ago_he": "לפני 15 דקות",
-      "time_ago_en": "15 minutes ago"
-    },
-    {
-      "timestamp": "2026-03-11T23:00:00+02:00",
-      "type": "feeding",
-      "icon": "🍼",
-      "title_he": "האכלה - הנקה",
-      "title_en": "Feeding - Nursing",
-      "time_ago_he": "לפני 2.5 שעות",
-      "time_ago_en": "2.5 hours ago"
-    },
-    {
-      "timestamp": "2026-03-11T19:20:00+02:00",
-      "type": "feeding",
-      "icon": "🍼",
-      "title_he": "האכלה - הנקה",
-      "title_en": "Feeding - Nursing",
-      "time_ago_he": "לפני 6 שעות",
-      "time_ago_en": "6 hours ago"
-    }
-  ],
-  "alerts": [
-    {
-      "id": "alert_001",
-      "severity": "warning",
-      "icon": "⚠️",
-      "title_he": "חסר רישום ויטמין D",
-      "title_en": "Missing Vitamin D supplement"
-    },
-    {
-      "id": "alert_002",
-      "severity": "info",
-      "icon": "ℹ️",
-      "title_he": "זמן רב מאז חיתול אחרון",
-      "title_en": "Long gap since last diaper"
-    }
-  ],
-  "upcoming": []
+  "last_events": {
+    "last_feeding": "2026-03-12T01:20:00+02:00",
+    "last_diaper": "2026-03-12T14:30:00+02:00",
+    "last_sleep_end": null
+  }
 }
