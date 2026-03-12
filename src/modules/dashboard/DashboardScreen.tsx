@@ -1,218 +1,157 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { t } from '../../i18n';
-import { getGreeting, formatRelativeTime, formatDuration, formatHebrewDateTime } from '../../utils';
-import { DashboardRepository, AlertsRepository, FeedingsRepository, AppointmentsRepository, TasksRepository } from '../../layers/data-access/repositories';
-import { Card, StatCard, SectionHeader, Badge, Sparkline } from '../../components/common';
-import { useAppStore } from '../../hooks/useAppStore';
-import {
-  Baby, Droplets, Moon, AlertTriangle, Calendar, ListTodo,
-  Heart, RefreshCw, Clock, ChevronLeft, TrendingUp, Pill
-} from 'lucide-react';
+import { getGreeting, formatRelativeTime, formatDuration } from '../../utils';
+import { useDataStore } from '../../layers/data-access/liveDataStore';
+import { Card, StatCard, SectionHeader, Badge, EmptyState } from '../../components/common';
+import { Baby, Droplets, Moon, AlertTriangle, ListTodo, RefreshCw, Clock } from 'lucide-react';
 
 export function DashboardScreen() {
-  const { syncStatus, lastSyncTime, triggerSync } = useAppStore();
-  const summary = DashboardRepository.getTodaySummary();
-  const alerts = AlertsRepository.getOpen();
-  const lastFeeding = FeedingsRepository.getLast();
-  const upcomingAppts = AppointmentsRepository.getUpcoming();
-  const overdueTasks = TasksRepository.getOverdue();
+  const { triggerSync, isBackendOnline, lastFetchTime } = useDataStore();
+  const dashboard = useDataStore(s => s.getDashboard());
+  const alerts = useDataStore(s => s.getAlerts());
+  const feedings = useDataStore(s => s.getFeedings());
+  const diapers = useDataStore(s => s.getDiapers());
+  const sleepLog = useDataStore(s => s.getSleep());
+  const tasks = useDataStore(s => s.getTasks());
+  const persons = useDataStore(s => s.getPersons());
+  const appointments = useDataStore(s => s.getAppointments());
+  const recovery = useDataStore(s => s.getRecovery());
+
+  const baby = persons.find((p: any) => p.role === 'baby');
+  const openTasks = tasks.filter((t: any) => t.status === 'פעיל' || t.status === 'todo' || t.status === 'in_progress');
+  const summaryCards = dashboard?.summary_cards || [];
+
+  const [syncing, setSyncing] = useState(false);
+  const handleSync = async () => { setSyncing(true); await triggerSync(); setSyncing(false); };
 
   return (
     <div className="animate-fade-in">
-      {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="font-display font-bold text-2xl text-sage-900">{t(getGreeting())} ☀️</h1>
-          <p className="text-sage-500 text-sm mt-0.5">{t('dashboard.todayOverview')}</p>
+          <p className="text-sage-500 text-sm mt-0.5">
+            {baby ? `${baby.name} — בת ${baby.age_days ?? ''} ימים` : 'סקירת היום'}
+          </p>
         </div>
-        <button
-          onClick={triggerSync}
-          disabled={syncStatus === 'syncing'}
-          className="btn btn-ghost text-sage-500 hover:text-brand-500"
-        >
-          <RefreshCw size={16} className={syncStatus === 'syncing' ? 'animate-spin' : ''} />
-          {syncStatus === 'syncing' ? t('sync.syncing') : t('settings.syncNow')}
+        <button onClick={handleSync} disabled={syncing} className="btn btn-ghost text-sage-500 hover:text-brand-500">
+          <RefreshCw size={16} className={syncing ? 'animate-spin' : ''} />
+          {syncing ? 'מסנכרן...' : 'סנכרן'}
         </button>
       </div>
 
-      {/* Sync Status Bar */}
-      {syncStatus === 'error' && (
-        <div className="bg-rose-50 border border-rose-200 rounded-lg px-4 py-2.5 flex items-center gap-2 text-rose-600 text-sm mb-4">
-          <AlertTriangle size={16} />
-          <span>{t('errors.offlineMode')}</span>
-          <span className="text-rose-400 mr-auto">{lastSyncTime ? formatRelativeTime(lastSyncTime) : ''}</span>
+      {/* Summary Cards */}
+      {summaryCards.length > 0 ? (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          {summaryCards.map((card: any) => (
+            <Card key={card.id} className="p-4">
+              <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-sm text-sage-500 font-medium mb-1">{card.title_he}</p>
+                  <p className="font-display font-bold text-2xl text-sage-900">{card.value}</p>
+                  <p className="text-xs text-sage-400 mt-0.5">{card.subtitle_he}</p>
+                </div>
+                <span className="text-2xl">{card.icon}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <StatCard label="האכלות" value={feedings.length} icon={<Baby size={20} />} color="text-brand-600" />
+          <StatCard label="חיתולים" value={diapers.length} icon={<Droplets size={20} />} color="text-sage-700" />
+          <StatCard label="שינה" value={sleepLog.length > 0 ? formatDuration(sleepLog.reduce((s: number, x: any) => s + (x.duration_min || 0), 0)) : 'אין נתונים'} icon={<Moon size={20} />} color="text-sky-600" />
+          <StatCard label="משימות" value={openTasks.length} icon={<ListTodo size={20} />} color="text-sage-700" />
         </div>
       )}
 
-      {/* Main Stats Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <StatCard
-          label={t('dashboard.lastFeeding')}
-          value={lastFeeding ? formatRelativeTime(lastFeeding.startTime) : '—'}
-          subtitle={lastFeeding ? t(`baby.feedingType.${lastFeeding.type}`) : undefined}
-          icon={<Baby size={20} />}
-          color="text-brand-600"
-        />
-        <StatCard
-          label={t('dashboard.totalSleep')}
-          value={formatDuration(summary.sleepTotalMinutes)}
-          subtitle={`${summary.sleepSessions} ${t('baby.sessions')}`}
-          icon={<Moon size={20} />}
-          color="text-sky-600"
-        />
-        <StatCard
-          label={t('dashboard.diaperCount')}
-          value={summary.diaperCount}
-          subtitle={`${summary.diaperWet} ${t('baby.diaperType.wet')} · ${summary.diaperDirty} ${t('baby.diaperType.dirty')}`}
-          icon={<Droplets size={20} />}
-          color="text-sage-700"
-        />
-        <StatCard
-          label={t('dashboard.openTasks')}
-          value={summary.openTasks}
-          subtitle={summary.overdueTasks > 0 ? `${summary.overdueTasks} ${t('tasks.overdue')}` : undefined}
-          icon={<ListTodo size={20} />}
-          color={summary.overdueTasks > 0 ? 'text-rose-500' : 'text-sage-700'}
-        />
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column: Alerts + Tasks */}
         <div className="lg:col-span-2 space-y-6">
           {/* Alerts */}
           {alerts.length > 0 && (
             <div>
-              <SectionHeader title={t('dashboard.openAlerts')} />
-              <div className="space-y-2">
-                {alerts.map((alert) => (
-                  <Card key={alert.id} className="p-4">
-                    <div className="flex items-start gap-3">
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                        alert.severity === 'critical' ? 'bg-rose-100 text-rose-500' :
-                        alert.severity === 'warning' ? 'bg-brand-100 text-brand-500' :
-                        'bg-sky-100 text-sky-500'
-                      }`}>
-                        <AlertTriangle size={16} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-0.5">
-                          <span className="font-medium text-sage-800 text-sm">{alert.title}</span>
-                          <Badge variant={alert.severity === 'critical' ? 'danger' : alert.severity === 'warning' ? 'warning' : 'info'}>
-                            {t(`alerts.severity.${alert.severity}`)}
-                          </Badge>
-                        </div>
-                        <p className="text-sm text-sage-500">{alert.message}</p>
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
+              <SectionHeader title="התראות" />
+              <div className="space-y-2">{alerts.map((a: any, i: number) => (
+                <Card key={a.id || i} className="p-4">
+                  <div className="flex items-start gap-3">
+                    <AlertTriangle size={16} className="text-brand-500 mt-0.5 flex-shrink-0" />
+                    <div><p className="font-medium text-sage-800 text-sm">{a.title_he || a.title}</p><p className="text-xs text-sage-500">{a.message_he || a.message}</p></div>
+                  </div>
+                </Card>
+              ))}</div>
             </div>
           )}
 
-          {/* Overdue Tasks */}
-          {overdueTasks.length > 0 && (
+          {/* Feedings */}
+          {feedings.length > 0 && (
             <div>
-              <SectionHeader title={`${t('tasks.overdue')} (${overdueTasks.length})`} />
-              <div className="space-y-2">
-                {overdueTasks.map((task) => (
-                  <Card key={task.id} className="p-4 border-r-4 border-r-rose-300">
-                    <div className="flex items-center justify-between">
+              <SectionHeader title={`האכלות אחרונות (${feedings.length})`} />
+              <div className="space-y-2">{feedings.slice().reverse().slice(0, 6).map((f: any) => (
+                <Card key={f.id} className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-brand-400" />
                       <div>
-                        <p className="font-medium text-sage-800 text-sm">{task.title}</p>
-                        <p className="text-xs text-sage-400 mt-0.5">
-                          {task.dueDate ? formatHebrewDateTime(task.dueDate) : ''}
-                        </p>
+                        <p className="font-medium text-sage-800 text-sm">{f.type_he || f.type}</p>
+                        <p className="text-xs text-sage-400">{f.date} · {f.start_time}</p>
                       </div>
-                      <Badge variant="danger">{t(`tasks.priority.${task.priority}`)}</Badge>
                     </div>
-                  </Card>
-                ))}
-              </div>
+                    <div className="flex gap-1">
+                      {f.duration_min && <Badge>{f.duration_min} דק׳</Badge>}
+                      {f.amount_ml && <Badge variant="info">{f.amount_ml} מ״ל</Badge>}
+                      {f.side_first && <Badge variant="default">{f.side_first === 'both' ? 'שני הצדדים' : f.side_first === 'left' ? 'שמאל' : f.side_first === 'right' ? 'ימין' : f.side_first}</Badge>}
+                    </div>
+                  </div>
+                  {f.notes && <p className="text-xs text-sage-400 mt-1 mr-5">{f.notes}</p>}
+                </Card>
+              ))}</div>
             </div>
           )}
 
-          {/* Mother Check-In */}
-          {summary.motherCheckIn && (
+          {/* Tasks */}
+          {openTasks.length > 0 && (
             <div>
-              <SectionHeader title={t('dashboard.motherCheckIn')} />
-              <Card className="p-5">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">💧</div>
-                    <p className="font-display font-bold text-lg text-sage-800">
-                      {summary.motherCheckIn.hydrationGlasses}/{summary.motherCheckIn.hydrationGoal}
-                    </p>
-                    <p className="text-xs text-sage-400">{t('mother.glasses')}</p>
+              <SectionHeader title={`משימות (${openTasks.length})`} />
+              <div className="space-y-2">{openTasks.map((task: any) => (
+                <Card key={task.id} className="p-4">
+                  <div className="flex items-center justify-between">
+                    <p className="font-medium text-sage-800 text-sm">{task.title}</p>
+                    <Badge variant={task.priority === 'גבוהה' ? 'warning' : 'default'}>{task.priority}</Badge>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">😴</div>
-                    <p className="font-display font-bold text-lg text-sage-800">
-                      {summary.motherCheckIn.sleepHours?.toFixed(1)}
-                    </p>
-                    <p className="text-xs text-sage-400">{t('baby.hours')}</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">😊</div>
-                    <p className="font-display font-bold text-lg text-sage-800">
-                      {summary.motherCheckIn.moodRating}/5
-                    </p>
-                    <p className="text-xs text-sage-400">{t('mother.mood')}</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">⚡</div>
-                    <p className="font-display font-bold text-lg text-sage-800">
-                      {summary.motherCheckIn.energyRating}/5
-                    </p>
-                    <p className="text-xs text-sage-400">{t('mother.energy')}</p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              ))}</div>
             </div>
+          )}
+
+          {feedings.length === 0 && alerts.length === 0 && openTasks.length === 0 && (
+            <EmptyState title="אין נתונים עדיין" description="הפעל את שרת הסנכרון כדי לטעון נתונים מהשרת" />
           )}
         </div>
 
-        {/* Right Column: Appointments + Quick Metrics */}
-        <div className="space-y-6">
-          {/* Upcoming Appointments */}
+        <div className="space-y-4">
+          {/* Family */}
           <div>
-            <SectionHeader title={t('dashboard.upcomingAppointments')} />
-            {upcomingAppts.length === 0 ? (
-              <Card className="p-4">
-                <p className="text-sm text-sage-400 text-center">{t('appointments.noAppointments')}</p>
+            <SectionHeader title="בני המשפחה" />
+            <div className="space-y-2">{persons.map((p: any) => (
+              <Card key={p.id} className="p-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{p.role === 'baby' ? '👶' : p.role === 'mother' ? '👩' : p.role === 'father' ? '👨' : '🧒'}</span>
+                  <div>
+                    <p className="font-medium text-sage-800 text-sm">{p.name}</p>
+                    <p className="text-xs text-sage-400">{p.role === 'baby' && p.age_days != null ? `בת ${p.age_days} ימים` : p.age_years ? `בן/בת ${p.age_years}` : ''}</p>
+                  </div>
+                </div>
               </Card>
-            ) : (
-              <div className="space-y-2">
-                {upcomingAppts.slice(0, 3).map((apt) => (
-                  <Card key={apt.id} className="p-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-sky-100 text-sky-500 flex items-center justify-center flex-shrink-0">
-                        <Calendar size={16} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sage-800 text-sm">{apt.title}</p>
-                        <p className="text-xs text-sage-400 mt-0.5">{formatHebrewDateTime(apt.dateTime)}</p>
-                        {apt.location && <p className="text-xs text-sage-400">{apt.location}</p>}
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            )}
+            ))}</div>
           </div>
 
-          {/* Sync Info */}
+          {/* Sync */}
           <Card className="p-4">
             <div className="flex items-center gap-2 mb-2">
               <Clock size={14} className="text-sage-400" />
-              <span className="text-xs text-sage-500 font-medium">{t('dashboard.syncStatus')}</span>
+              <span className="text-xs text-sage-500 font-medium">מצב סנכרון</span>
             </div>
-            <p className="text-sm text-sage-600">
-              {lastSyncTime ? `${t('sync.lastSync')}: ${formatRelativeTime(lastSyncTime)}` : t('sync.never')}
-            </p>
-            <p className="text-xs text-sage-400 mt-1">
-              {summary.isStale ? t('dashboard.staleWarning') : `${summary.feedingCount + summary.diaperCount + summary.sleepSessions} אירועים היום`}
-            </p>
+            <p className="text-sm text-sage-600">{isBackendOnline ? '🟢 מחובר לשרת' : '🔴 לא מחובר'}</p>
+            <p className="text-xs text-sage-400 mt-1">{lastFetchTime ? `עדכון: ${formatRelativeTime(lastFetchTime)}` : 'טרם סונכרן'}</p>
           </Card>
         </div>
       </div>

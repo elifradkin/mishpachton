@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "updated_at": "2026-03-12T03:07:00+02:00",
+  "diapers": [
+    {
+      "id": "diaper_001",
+      "person_id": "lia",
+      "date": "2026-03-11",
+      "time": "16:00:00",
+      "timestamp": "2026-03-11T16:00:00+02:00",
+      "type": "both",
+      "has_wet": true,
+      "has_dirty": true,
+      "notes": "",
+      "notes_en": "",
+      "tags": ["wet", "dirty"],
+      "created_at": "2026-03-11T21:18:00+02:00",
+      "updated_at": "2026-03-12T01:35:00+02:00"
+    },
+    {
+      "id": "diaper_002",
+      "person_id": "lia",
+      "date": "2026-03-12",
+      "time": "02:30:00",
+      "timestamp": "2026-03-12T02:30:00+02:00",
+      "type": "dirty",
+      "has_wet": false,
+      "has_dirty": true,
+      "notes": "",
+      "notes_en": "",
+      "tags": ["dirty"],
+      "created_at": "2026-03-12T03:07:00+02:00",
+      "updated_at": "2026-03-12T03:07:00+02:00"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "updated_at": "2026-03-12T01:35:00+02:00",
+  "persons": [
+    {
+      "id": "zohar",
+      "name": "זוהר לב פרדקין",
+      "name_en": "Zohar Lev Fradkin",
+      "role": "mother",
+      "date_of_birth": "1987-11-20",
+      "age_years": 38,
+      "status": "postpartum",
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "medical": {
+        "allergies": [],
+        "chronic_conditions": [],
+        "blood_type": null
+      },
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-12T01:35:00+02:00"
+    },
+    {
+      "id": "eli",
+      "name": "אלי פרדקין",
+      "name_en": "Eli Fradkin",
+      "role": "father",
+      "date_of_birth": "1986-06-04",
+      "age_years": 39,
+      "status": "healthy",
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "medical": {
+        "allergies": [],
+        "chronic_conditions": [],
+        "blood_type": null
+      },
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-12T01:35:00+02:00"
+    },
+    {
+      "id": "ariel",
+      "name": "אריאל פרדקין",
+      "name_en": "Ariel Fradkin",
+      "role": "child",
+      "date_of_birth": "2018-08-23",
+      "age_years": 7,
+      "status": "healthy",
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "medical": {
+        "allergies": [],
+        "chronic_conditions": [],
+        "blood_type": null
+      },
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-12T01:35:00+02:00"
+    },
+    {
+      "id": "omer",
+      "name": "עומר דב פרדקין",
+      "name_en": "Omer Dov Fradkin",
+      "role": "child",
+      "date_of_birth": "2021-05-18",
+      "age_years": 4,
+      "status": "healthy",
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "medical": {
+        "allergies": [],
+        "chronic_conditions": [],
+        "blood_type": null
+      },
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-12T01:35:00+02:00"
+    },
+    {
+      "id": "lia",
+      "name": "ליה פרדקין",
+      "name_en": "Lia Fradkin",
+      "role": "baby",
+      "date_of_birth": "2026-03-09",
+      "age_days": 3,
+      "status": "healthy",
+      "birth_details": {
+        "birth_weight_grams": null,
+        "birth_length_cm": null,
+        "gestational_age_weeks": null,
+        "delivery_type": null
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "medical": {
+        "allergies": [],
+        "chronic_conditions": [],
+        "blood_type": null
+      },
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-12T01:35:00+02:00"
+    }
+  ]
+}

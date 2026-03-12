@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "ui_labels": {
+    "dashboard": {
+      "title": {
+        "en": "Family Dashboard",
+        "he": "לוח בקרה משפחתי"
+      },
+      "today": {
+        "en": "Today",
+        "he": "היום"
+      },
+      "summary": {
+        "en": "Summary",
+        "he": "סיכום"
+      },
+      "recent_events": {
+        "en": "Recent Events",
+        "he": "אירועים אחרונים"
+      },
+      "alerts": {
+        "en": "Alerts",
+        "he": "התראות"
+      },
+      "upcoming": {
+        "en": "Upcoming",
+        "he": "קרוב"
+      }
+    },
+    "baby": {
+      "title": {
+        "en": "Baby Care",
+        "he": "טיפול בתינוקת"
+      },
+      "feeding": {
+        "en": "Feeding",
+        "he": "האכלה"
+      },
+      "diapers": {
+        "en": "Diapers",
+        "he": "חיתולים"
+      },
+      "sleep": {
+        "en": "Sleep",
+        "he": "שינה"
+      },
+      "health": {
+        "en": "Health",
+        "he": "בריאות"
+      },
+      "last_feeding": {
+        "en": "Last Feeding",
+        "he": "האכלה אחרונה"
+      },
+      "last_diaper": {
+        "en": "Last Diaper",
+        "he": "חיתול אחרון"
+      },
+      "total_feedings": {
+        "en": "Total Feedings Today",
+        "he": "סה״כ האכלות היום"
+      },
+      "total_diapers": {
+        "en": "Total Diapers Today",
+        "he": "סה״כ חיתולים היום"
+      },
+      "nursing_time": {
+        "en": "Nursing Time",
+        "he": "זמן הנקה"
+      },
+      "bottle_amount": {
+        "en": "Bottle Amount",
+        "he": "כמות בקבוק"
+      }
+    },
+    "mother": {
+      "title": {
+        "en": "Mother's Recovery",
+        "he": "החלמת האם"
+      },
+      "postpartum": {
+        "en": "Postpartum Care",
+        "he": "טיפול אחרי לידה"
+      },
+      "medications": {
+        "en": "Medications",
+        "he": "תרופות"
+      },
+      "appointments": {
+        "en": "Appointments",
+        "he": "פגישות"
+      }
+    },
+    "family": {
+      "title": {
+        "en": "Family",
+        "he": "משפחה"
+      },
+      "tasks": {
+        "en": "Tasks",
+        "he": "משימות"
+      },
+      "reminders": {
+        "en": "Reminders",
+        "he": "תזכורות"
+      },
+      "calendar": {
+        "en": "Calendar",
+        "he": "יומן"
+      }
+    },
+    "actions": {
+      "add": {
+        "en": "Add",
+        "he": "הוסף"
+      },
+      "edit": {
+        "en": "Edit",
+        "he": "ערוך"
+      },
+      "delete": {
+        "en": "Delete",
+        "he": "מחק"
+      },
+      "save": {
+        "en": "Save",
+        "he": "שמור"
+      },
+      "cancel": {
+        "en": "Cancel",
+        "he": "ביטול"
+      },
+      "view": {
+        "en": "View",
+        "he": "צפה"
+      },
+      "export": {
+        "en": "Export",
+        "he": "ייצוא"
+      }
+    },
+    "time": {
+      "minutes_ago": {
+        "en": "minutes ago",
+        "he": "דקות"
+      },
+      "hours_ago": {
+        "en": "hours ago",
+        "he": "שעות"
+      },
+      "days_ago": {
+        "en": "days ago",
+        "he": "ימים"
+      },
+      "just_now": {
+        "en": "just now",
+        "he": "עכשיו"
+      }
+    },
+    "alerts": {
+      "missing_vitamin_d": {
+        "en": "Vitamin D supplement not recorded",
+        "he": "לא נרשם תוסף ויטמין D"
+      },
+      "feeding_gap": {
+        "en": "Long gap since last feeding",
+        "he": "פער ארוך מאז האכלה אחרונה"
+      },
+      "diaper_gap": {
+        "en": "Check diaper",
+        "he": "בדקי חיתול"
+      }
+    }
+  }
+}

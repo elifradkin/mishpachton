@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-03-12",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "summary_cards": [
+    {
+      "id": "baby_feeding",
+      "title_he": "האכלות היום",
+      "title_en": "Feedings Today",
+      "value": 5,
+      "unit_he": "האכלות",
+      "unit_en": "feedings",
+      "subtitle_he": "אחרונה לפני 15 דקות",
+      "subtitle_en": "Last 15 minutes ago",
+      "icon": "🍼",
+      "status": "normal"
+    },
+    {
+      "id": "baby_diapers",
+      "title_he": "חיתולים היום",
+      "title_en": "Diapers Today",
+      "value": 1,
+      "unit_he": "חיתולים",
+      "unit_en": "diapers",
+      "subtitle_he": "אחרון לפני 9.5 שעות",
+      "subtitle_en": "Last 9.5 hours ago",
+      "icon": "🧷",
+      "status": "warning"
+    },
+    {
+      "id": "mother_recovery",
+      "title_he": "החלמת האם",
+      "title_en": "Mother's Recovery",
+      "value": 3,
+      "unit_he": "ימים",
+      "unit_en": "days",
+      "subtitle_he": "יום 3 אחרי לידה",
+      "subtitle_en": "Day 3 postpartum",
+      "icon": "👩",
+      "status": "normal"
+    },
+    {
+      "id": "family_tasks",
+      "title_he": "משימות פעילות",
+      "title_en": "Active Tasks",
+      "value": 2,
+      "unit_he": "משימות",
+      "unit_en": "tasks",
+      "subtitle_he": "1 בעדיפות גבוהה",
+      "subtitle_en": "1 high priority",
+      "icon": "✅",
+      "status": "normal"
+    }
+  ],
+  "chart_series": {
+    "feedings_24h": [
+      {
+        "hour": "13:00",
+        "count": 1,
+        "type": "bottle"
+      },
+      {
+        "hour": "16:00",
+        "count": 1,
+        "type": "bottle"
+      },
+      {
+        "hour": "19:00",
+        "count": 1,
+        "type": "nursing"
+      },
+      {
+        "hour": "23:00",
+        "count": 1,
+        "type": "nursing"
+      },
+      {
+        "hour": "01:00",
+        "count": 1,
+        "type": "nursing"
+      }
+    ],
+    "diapers_24h": [
+      {
+        "hour": "16:00",
+        "count": 1,
+        "type": "both"
+      }
+    ]
+  },
+  "recent_events": [
+    {
+      "timestamp": "2026-03-12T01:20:00+02:00",
+      "type": "feeding",
+      "icon": "🍼",
+      "title_he": "האכלה - הנקה",
+      "title_en": "Feeding - Nursing",
+      "time_ago_he": "לפני 15 דקות",
+      "time_ago_en": "15 minutes ago"
+    },
+    {
+      "timestamp": "2026-03-11T23:00:00+02:00",
+      "type": "feeding",
+      "icon": "🍼",
+      "title_he": "האכלה - הנקה",
+      "title_en": "Feeding - Nursing",
+      "time_ago_he": "לפני 2.5 שעות",
+      "time_ago_en": "2.5 hours ago"
+    },
+    {
+      "timestamp": "2026-03-11T19:20:00+02:00",
+      "type": "feeding",
+      "icon": "🍼",
+      "title_he": "האכלה - הנקה",
+      "title_en": "Feeding - Nursing",
+      "time_ago_he": "לפני 6 שעות",
+      "time_ago_en": "6 hours ago"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert_001",
+      "severity": "warning",
+      "icon": "⚠️",
+      "title_he": "חסר רישום ויטמין D",
+      "title_en": "Missing Vitamin D supplement"
+    },
+    {
+      "id": "alert_002",
+      "severity": "info",
+      "icon": "ℹ️",
+      "title_he": "זמן רב מאז חיתול אחרון",
+      "title_en": "Long gap since last diaper"
+    }
+  ],
+  "upcoming": []
+}

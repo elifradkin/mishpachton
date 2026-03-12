@@ -1,0 +1,38 @@
+{
+  "tasks": [
+    {
+      "id": "task_001",
+      "title": "מעבר דירה",
+      "title_en": "Moving",
+      "category": "לוגיסטיקה",
+      "category_en": "logistics",
+      "assigned_to": null,
+      "priority": "גבוהה",
+      "status": "פעיל",
+      "due_date": null,
+      "reminders": [],
+      "notes": "",
+      "subtasks": [],
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-11T14:27:00+02:00"
+    },
+    {
+      "id": "task_002",
+      "title": "קניות",
+      "title_en": "Shopping",
+      "category": "קניות",
+      "category_en": "shopping",
+      "assigned_to": null,
+      "priority": "בינונית",
+      "status": "פעיל",
+      "due_date": null,
+      "reminders": [],
+      "notes": "",
+      "subtasks": [],
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-11T14:27:00+02:00"
+    }
+  ],
+  "schema_version": "1.0",
+  "created_at": "2026-03-11T14:27:00+02:00"
+}

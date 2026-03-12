@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-03-12",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "metrics": {
+    "total_tasks": 2,
+    "by_status": {
+      "active": 2,
+      "completed": 0,
+      "cancelled": 0,
+      "pending": 0
+    },
+    "by_priority": {
+      "high": 1,
+      "medium": 1,
+      "low": 0,
+      "urgent": 0
+    },
+    "by_category": {
+      "logistics": 1,
+      "shopping": 1,
+      "health": 0,
+      "household": 0,
+      "childcare": 0,
+      "administrative": 0
+    },
+    "overdue_count": 0,
+    "due_today_count": 0,
+    "due_this_week_count": 0
+  },
+  "summary_he": "2 משימות פעילות (1 גבוהה, 1 בינונית)",
+  "summary_en": "2 active tasks (1 high, 1 medium)"
+}

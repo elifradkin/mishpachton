@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "operations": [
+    {
+      "id": "op_001",
+      "timestamp": "2026-03-12T01:35:00+02:00",
+      "operation_type": "system_setup",
+      "status": "success",
+      "duration_ms": 0,
+      "details": {
+        "action": "initial_data_migration",
+        "source_files": [
+          "/data/family.json",
+          "/data/feeding.json",
+          "/data/diapers.json",
+          "/data/tasks.json"
+        ],
+        "target_structure": "/data/{normalized,derived,indexes,schemas,raw,logs,snapshots}",
+        "records_migrated": {
+          "persons": 5,
+          "feedings": 5,
+          "diapers": 1,
+          "tasks": 2,
+          "events": 6
+        },
+        "files_created": 23
+      },
+      "message": "Successfully migrated existing data to normalized structure",
+      "user": "system"
+    }
+  ]
+}

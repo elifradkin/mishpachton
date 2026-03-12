@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "fields": {
+    "id": {
+      "label_en": "ID",
+      "label_he": "מזהה",
+      "type": "string"
+    },
+    "person_id": {
+      "label_en": "Person",
+      "label_he": "אדם",
+      "type": "string"
+    },
+    "name": {
+      "label_en": "Name",
+      "label_he": "שם",
+      "type": "string"
+    },
+    "name_en": {
+      "label_en": "English Name",
+      "label_he": "שם באנגלית",
+      "type": "string"
+    },
+    "role": {
+      "label_en": "Role",
+      "label_he": "תפקיד",
+      "type": "enum"
+    },
+    "date_of_birth": {
+      "label_en": "Date of Birth",
+      "label_he": "תאריך לידה",
+      "type": "date"
+    },
+    "status": {
+      "label_en": "Status",
+      "label_he": "סטטוס",
+      "type": "enum"
+    },
+    "type": {
+      "label_en": "Type",
+      "label_he": "סוג",
+      "type": "enum"
+    },
+    "date": {
+      "label_en": "Date",
+      "label_he": "תאריך",
+      "type": "date"
+    },
+    "time": {
+      "label_en": "Time",
+      "label_he": "שעה",
+      "type": "time"
+    },
+    "start_time": {
+      "label_en": "Start Time",
+      "label_he": "שעת התחלה",
+      "type": "time"
+    },
+    "end_time": {
+      "label_en": "End Time",
+      "label_he": "שעת סיום",
+      "type": "time"
+    },
+    "duration_min": {
+      "label_en": "Duration (minutes)",
+      "label_he": "משך (דקות)",
+      "type": "number"
+    },
+    "amount_ml": {
+      "label_en": "Amount (ml)",
+      "label_he": "כמות (מ״ל)",
+      "type": "number"
+    },
+    "formula_brand": {
+      "label_en": "Formula Brand",
+      "label_he": "מותג תמ״ל",
+      "type": "string"
+    },
+    "side_first": {
+      "label_en": "First Side",
+      "label_he": "צד ראשון",
+      "type": "enum"
+    },
+    "side_second": {
+      "label_en": "Second Side",
+      "label_he": "צד שני",
+      "type": "enum"
+    },
+    "notes": {
+      "label_en": "Notes",
+      "label_he": "הערות",
+      "type": "text"
+    },
+    "title": {
+      "label_en": "Title",
+      "label_he": "כותרת",
+      "type": "string"
+    },
+    "title_en": {
+      "label_en": "English Title",
+      "label_he": "כותרת באנגלית",
+      "type": "string"
+    },
+    "category": {
+      "label_en": "Category",
+      "label_he": "קטגוריה",
+      "type": "enum"
+    },
+    "priority": {
+      "label_en": "Priority",
+      "label_he": "עדיפות",
+      "type": "enum"
+    },
+    "assigned_to": {
+      "label_en": "Assigned To",
+      "label_he": "מוקצה ל",
+      "type": "string"
+    },
+    "due_date": {
+      "label_en": "Due Date",
+      "label_he": "תאריך יעד",
+      "type": "date"
+    },
+    "severity": {
+      "label_en": "Severity",
+      "label_he": "חומרה",
+      "type": "enum"
+    },
+    "metric_type": {
+      "label_en": "Metric Type",
+      "label_he": "סוג מדד",
+      "type": "enum"
+    },
+    "value": {
+      "label_en": "Value",
+      "label_he": "ערך",
+      "type": "number"
+    },
+    "unit": {
+      "label_en": "Unit",
+      "label_he": "יחידה",
+      "type": "string"
+    },
+    "medication_name": {
+      "label_en": "Medication Name",
+      "label_he": "שם תרופה",
+      "type": "string"
+    },
+    "dosage": {
+      "label_en": "Dosage",
+      "label_he": "מינון",
+      "type": "string"
+    },
+    "frequency": {
+      "label_en": "Frequency",
+      "label_he": "תדירות",
+      "type": "string"
+    },
+    "appointment_type": {
+      "label_en": "Appointment Type",
+      "label_he": "סוג פגישה",
+      "type": "enum"
+    },
+    "provider": {
+      "label_en": "Provider",
+      "label_he": "נותן שירות",
+      "type": "string"
+    },
+    "location": {
+      "label_en": "Location",
+      "label_he": "מיקום",
+      "type": "string"
+    },
+    "reminder_time": {
+      "label_en": "Reminder Time",
+      "label_he": "זמן תזכורת",
+      "type": "datetime"
+    },
+    "created_at": {
+      "label_en": "Created At",
+      "label_he": "נוצר ב",
+      "type": "datetime"
+    },
+    "updated_at": {
+      "label_en": "Updated At",
+      "label_he": "עודכן ב",
+      "type": "datetime"
+    }
+  }
+}

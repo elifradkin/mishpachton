@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "person_id": "zohar",
+  "date": "2026-03-12",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "days_postpartum": 3,
+  "metrics": {
+    "medications": {
+      "total_scheduled": 0,
+      "total_taken": 0,
+      "missed_count": 0,
+      "adherence_percent": 0
+    },
+    "appointments": {
+      "upcoming_count": 0,
+      "next_appointment": null,
+      "days_until_next": null
+    },
+    "health": {
+      "temperature_readings": 0,
+      "blood_pressure_readings": 0,
+      "pain_level_avg": null
+    },
+    "nursing": {
+      "total_sessions": 3,
+      "total_minutes": 100,
+      "avg_duration_minutes": 33
+    }
+  },
+  "summary_he": "יום 3 אחרי לידה, 3 הנקות",
+  "summary_en": "Day 3 postpartum, 3 nursing sessions"
+}

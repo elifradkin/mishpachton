@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "updated_at": "2026-03-12T01:35:00+02:00",
+  "tasks": [
+    {
+      "id": "task_001",
+      "title": "מעבר דירה",
+      "title_en": "Moving",
+      "category": "logistics",
+      "assigned_to": null,
+      "priority": "high",
+      "status": "active",
+      "due_date": null,
+      "reminders": [],
+      "notes": "",
+      "notes_en": "",
+      "subtasks": [],
+      "tags": ["logistics", "moving"],
+      "progress_percent": 0,
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-12T01:35:00+02:00"
+    },
+    {
+      "id": "task_002",
+      "title": "קניות",
+      "title_en": "Shopping",
+      "category": "shopping",
+      "assigned_to": null,
+      "priority": "medium",
+      "status": "active",
+      "due_date": null,
+      "reminders": [],
+      "notes": "",
+      "notes_en": "",
+      "subtasks": [],
+      "tags": ["shopping"],
+      "progress_percent": 0,
+      "created_at": "2026-03-11T14:27:00+02:00",
+      "updated_at": "2026-03-12T01:35:00+02:00"
+    }
+  ]
+}

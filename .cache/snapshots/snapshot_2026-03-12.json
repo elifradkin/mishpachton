@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "snapshot_date": "2026-03-12",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "snapshot_type": "daily",
+  "data": {
+    "persons": {
+      "total": 5,
+      "summary": [
+        {
+          "id": "zohar",
+          "name": "זוהר לב פרדקין",
+          "role": "mother",
+          "status": "postpartum"
+        },
+        {
+          "id": "eli",
+          "name": "אלי פרדקין",
+          "role": "father",
+          "status": "healthy"
+        },
+        {
+          "id": "ariel",
+          "name": "אריאל פרדקין",
+          "role": "child",
+          "status": "healthy"
+        },
+        {
+          "id": "omer",
+          "name": "עומר דב פרדקין",
+          "role": "child",
+          "status": "healthy"
+        },
+        {
+          "id": "lia",
+          "name": "ליה פרדקין",
+          "role": "baby",
+          "age_days": 3,
+          "status": "healthy"
+        }
+      ]
+    },
+    "feedings": {
+      "total": 5,
+      "nursing_count": 3,
+      "bottle_count": 2,
+      "total_nursing_minutes": 100,
+      "total_bottle_ml": 60
+    },
+    "diapers": {
+      "total": 1,
+      "wet_count": 1,
+      "dirty_count": 1
+    },
+    "sleeps": {
+      "total": 0
+    },
+    "tasks": {
+      "total": 2,
+      "active": 2,
+      "completed": 0
+    },
+    "alerts": {
+      "total": 2,
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "events": {
+      "total": 6,
+      "by_type": {
+        "feeding": 5,
+        "diaper": 1,
+        "sleep": 0,
+        "health": 0
+      }
+    }
+  },
+  "metrics": {
+    "baby_daily": {
+      "feeding_count": 5,
+      "nursing_minutes": 100,
+      "bottle_ml": 60,
+      "diaper_count": 1,
+      "sleep_minutes": 0
+    },
+    "mother_recovery": {
+      "days_postpartum": 3,
+      "nursing_sessions": 3,
+      "nursing_minutes": 100
+    },
+    "family_tasks": {
+      "active_tasks": 2,
+      "high_priority": 1,
+      "medium_priority": 1
+    }
+  },
+  "system_info": {
+    "schema_version": "1.0",
+    "total_files": 23,
+    "total_records": 31,
+    "data_quality": "complete",
+    "last_update": "2026-03-12T01:35:00+02:00"
+  }
+}

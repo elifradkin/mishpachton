@@ -1,0 +1,287 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "enums": {
+    "feeding_mode": {
+      "nursing": {
+        "key": "nursing",
+        "label_en": "Nursing",
+        "label_he": "הנקה"
+      },
+      "bottle": {
+        "key": "bottle",
+        "label_en": "Bottle (Formula)",
+        "label_he": "בקבוק תמ״ל"
+      },
+      "bottle_pumped": {
+        "key": "bottle_pumped",
+        "label_en": "Bottle (Pumped Milk)",
+        "label_he": "בקבוק חלב שאוב"
+      },
+      "mixed": {
+        "key": "mixed",
+        "label_en": "Mixed",
+        "label_he": "מעורב"
+      }
+    },
+    "nursing_side": {
+      "left": {
+        "key": "left",
+        "label_en": "Left",
+        "label_he": "שמאל"
+      },
+      "right": {
+        "key": "right",
+        "label_en": "Right",
+        "label_he": "ימין"
+      },
+      "both": {
+        "key": "both",
+        "label_en": "Both",
+        "label_he": "שני הצדדים"
+      }
+    },
+    "diaper_type": {
+      "wet": {
+        "key": "wet",
+        "label_en": "Wet",
+        "label_he": "פיפי"
+      },
+      "dirty": {
+        "key": "dirty",
+        "label_en": "Dirty",
+        "label_he": "קקי"
+      },
+      "both": {
+        "key": "both",
+        "label_en": "Both",
+        "label_he": "קקי + פיפי"
+      }
+    },
+    "sleep_type": {
+      "night": {
+        "key": "night",
+        "label_en": "Night Sleep",
+        "label_he": "שינה לילית"
+      },
+      "nap": {
+        "key": "nap",
+        "label_en": "Nap",
+        "label_he": "תנומה"
+      }
+    },
+    "priority": {
+      "low": {
+        "key": "low",
+        "label_en": "Low",
+        "label_he": "נמוכה"
+      },
+      "medium": {
+        "key": "medium",
+        "label_en": "Medium",
+        "label_he": "בינונית"
+      },
+      "high": {
+        "key": "high",
+        "label_en": "High",
+        "label_he": "גבוהה"
+      },
+      "urgent": {
+        "key": "urgent",
+        "label_en": "Urgent",
+        "label_he": "דחופה"
+      }
+    },
+    "status": {
+      "active": {
+        "key": "active",
+        "label_en": "Active",
+        "label_he": "פעיל"
+      },
+      "completed": {
+        "key": "completed",
+        "label_en": "Completed",
+        "label_he": "הושלם"
+      },
+      "cancelled": {
+        "key": "cancelled",
+        "label_en": "Cancelled",
+        "label_he": "בוטל"
+      },
+      "pending": {
+        "key": "pending",
+        "label_en": "Pending",
+        "label_he": "ממתין"
+      }
+    },
+    "person_status": {
+      "postpartum": {
+        "key": "postpartum",
+        "label_en": "Postpartum",
+        "label_he": "לאחר לידה"
+      },
+      "healthy": {
+        "key": "healthy",
+        "label_en": "Healthy",
+        "label_he": "בריא"
+      },
+      "sick": {
+        "key": "sick",
+        "label_en": "Sick",
+        "label_he": "חולה"
+      }
+    },
+    "task_category": {
+      "logistics": {
+        "key": "logistics",
+        "label_en": "Logistics",
+        "label_he": "לוגיסטיקה"
+      },
+      "shopping": {
+        "key": "shopping",
+        "label_en": "Shopping",
+        "label_he": "קניות"
+      },
+      "health": {
+        "key": "health",
+        "label_en": "Health",
+        "label_he": "בריאות"
+      },
+      "household": {
+        "key": "household",
+        "label_en": "Household",
+        "label_he": "בית"
+      },
+      "childcare": {
+        "key": "childcare",
+        "label_en": "Childcare",
+        "label_he": "טיפול בילדים"
+      },
+      "administrative": {
+        "key": "administrative",
+        "label_en": "Administrative",
+        "label_he": "מנהלי"
+      }
+    },
+    "role": {
+      "mother": {
+        "key": "mother",
+        "label_en": "Mother",
+        "label_he": "אמא"
+      },
+      "father": {
+        "key": "father",
+        "label_en": "Father",
+        "label_he": "אבא"
+      },
+      "child": {
+        "key": "child",
+        "label_en": "Child",
+        "label_he": "ילד/ה"
+      },
+      "baby": {
+        "key": "baby",
+        "label_en": "Baby",
+        "label_he": "תינוק/ת"
+      }
+    },
+    "metric_type": {
+      "weight": {
+        "key": "weight",
+        "label_en": "Weight",
+        "label_he": "משקל"
+      },
+      "temperature": {
+        "key": "temperature",
+        "label_en": "Temperature",
+        "label_he": "טמפרטורה"
+      },
+      "blood_pressure": {
+        "key": "blood_pressure",
+        "label_en": "Blood Pressure",
+        "label_he": "לחץ דם"
+      },
+      "heart_rate": {
+        "key": "heart_rate",
+        "label_en": "Heart Rate",
+        "label_he": "דופק"
+      }
+    },
+    "appointment_type": {
+      "pediatrician": {
+        "key": "pediatrician",
+        "label_en": "Pediatrician",
+        "label_he": "רופא ילדים"
+      },
+      "obgyn": {
+        "key": "obgyn",
+        "label_en": "OB/GYN",
+        "label_he": "גינקולוג"
+      },
+      "lactation": {
+        "key": "lactation",
+        "label_en": "Lactation Consultant",
+        "label_he": "יועצת הנקה"
+      },
+      "vaccination": {
+        "key": "vaccination",
+        "label_en": "Vaccination",
+        "label_he": "חיסון"
+      },
+      "checkup": {
+        "key": "checkup",
+        "label_en": "Check-up",
+        "label_he": "בדיקת מעקב"
+      }
+    },
+    "severity": {
+      "info": {
+        "key": "info",
+        "label_en": "Info",
+        "label_he": "מידע"
+      },
+      "warning": {
+        "key": "warning",
+        "label_en": "Warning",
+        "label_he": "אזהרה"
+      },
+      "critical": {
+        "key": "critical",
+        "label_en": "Critical",
+        "label_he": "קריטי"
+      }
+    },
+    "event_type": {
+      "feeding": {
+        "key": "feeding",
+        "label_en": "Feeding",
+        "label_he": "האכלה"
+      },
+      "diaper": {
+        "key": "diaper",
+        "label_en": "Diaper Change",
+        "label_he": "החלפת חיתול"
+      },
+      "sleep": {
+        "key": "sleep",
+        "label_en": "Sleep",
+        "label_he": "שינה"
+      },
+      "health": {
+        "key": "health",
+        "label_en": "Health Log",
+        "label_he": "רישום בריאות"
+      },
+      "medication": {
+        "key": "medication",
+        "label_en": "Medication",
+        "label_he": "תרופה"
+      },
+      "appointment": {
+        "key": "appointment",
+        "label_en": "Appointment",
+        "label_he": "פגישה"
+      }
+    }
+  }
+}

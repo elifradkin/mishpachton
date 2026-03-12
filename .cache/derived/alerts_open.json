@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-03-12T01:35:00+02:00",
+  "alerts": [
+    {
+      "id": "alert_001",
+      "alert_type": "missing_vitamin_d",
+      "severity": "warning",
+      "person_id": "lia",
+      "title_he": "חסר רישום ויטמין D",
+      "title_en": "Missing Vitamin D supplement",
+      "message_he": "לא נרשם מתן ויטמין D היום לתינוקת",
+      "message_en": "Vitamin D supplement not recorded today for baby",
+      "action_required": true,
+      "timestamp": "2026-03-12T01:35:00+02:00"
+    },
+    {
+      "id": "alert_002",
+      "alert_type": "diaper_gap",
+      "severity": "info",
+      "person_id": "lia",
+      "title_he": "זמן רב מאז חיתול אחרון",
+      "title_en": "Long gap since last diaper",
+      "message_he": "9.5 שעות מאז החלפת החיתול האחרונה",
+      "message_en": "9.5 hours since last diaper change",
+      "action_required": true,
+      "timestamp": "2026-03-12T01:35:00+02:00"
+    }
+  ],
+  "summary": {
+    "total_alerts": 2,
+    "by_severity": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "action_required_count": 2
+  }
+}
